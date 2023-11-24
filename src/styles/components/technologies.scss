@@ -1,0 +1,66 @@
+@import '../variables.scss', '../mixins.scss';
+
+.technologies-container{
+    margin-bottom: 1rem;
+    width: 100%;
+
+    .technologies-grid{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        .technology-card{
+            @include center;
+            justify-content: flex-start;
+            
+            flex-grow: 1;
+            flex-basis: 30%;
+            gap: 1rem;
+            padding: .8rem;
+            border: 1px solid $dark-300;
+            border-radius: $card-border-radius;
+
+            h3{
+                width: 100px;
+            }
+
+            p{
+                font-size: .8rem;
+                padding-right: 5px;
+            }
+
+            svg {
+                font-size: 3rem;
+                fill: url(#yellow-gradient);
+            }
+        }
+   
+    }
+
+    .show-more-btn{
+        border: 1px solid $dark-300;
+        background-color: transparent;
+        padding: .6rem 1.4rem;
+        border-radius: $card-border-radius;
+        margin-top: 1.5rem;   
+        align-self: center;
+        font-size: 14px;
+        font-weight: 500;
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        svg{
+            margin-right: .4rem;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        .card{
+            background-color: transparent;
+        }
+    }
+
+    
+}

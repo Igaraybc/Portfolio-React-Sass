@@ -1,0 +1,46 @@
+@import '../variables.scss', '../mixins.scss';
+
+#portfolio{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 6rem 3rem;
+    gap: 3rem;
+
+    .switch-btn{
+        position: absolute;
+        top: 2rem;
+        width: 52px;
+        height: 28px;
+        border-radius: 20px;
+        right: 3.5rem;
+
+        &:hover, :hover{
+            cursor: pointer;
+        }
+        
+        .theme-icon{
+            position: absolute;
+            left: 24px;
+            width: 24px;
+            height: 24px;
+            border: none;
+            border-radius: 50%;
+            transition: transform 0.5s;
+    
+            svg{
+                font-size: 1rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.light-body{
+    @include theme-body(true);
+}
+
+.dark-body{
+    @include theme-body();
+}
+

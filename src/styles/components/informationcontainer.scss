@@ -1,0 +1,42 @@
+@import '../variables.scss', '../mixins.scss';
+
+#information-container{
+    @include center();
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1.5rem;
+    text-align: left;
+    width: 80%;
+    border-radius: $card-border-radius;
+
+    .info-card{
+        @include center;
+        justify-content: flex-start;
+        gap: 1rem;
+        padding-bottom: .8rem;
+        margin-bottom: .8rem;
+        border-bottom: 1px solid $dark-300;
+        width: 100%;
+
+        h3{
+            font-size: .8rem;
+            margin-bottom: .6rem;
+        }
+
+        p{
+            font-weight: bold;
+        }
+
+        svg{
+            padding: .4rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: $card-border-radius;
+        }
+
+        #email-icon{
+            width: 3rem;
+            margin: auto -.5rem;
+        }
+    }
+}

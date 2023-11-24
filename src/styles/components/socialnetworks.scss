@@ -1,0 +1,20 @@
+@import '../variables.scss', '../mixins.scss';
+
+#social-networks{
+    @include center();
+    gap: 1.2rem;
+    margin: 1rem 0;
+
+    .social-btn{
+        padding: .6rem;
+        border-radius: $card-border-radius;
+        font-size: 1.3rem;
+        @include center();
+    }
+
+    :hover{
+        > svg {
+            color: white;
+        }
+    }
+}

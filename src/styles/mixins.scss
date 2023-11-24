@@ -1,0 +1,113 @@
+@import './variables.scss';
+
+@mixin center(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin btn($gradient-color){
+    padding: .6rem 1.8rem;
+    color: white;
+    background: $gradient-color;
+    text-decoration: none;
+    border-radius: 1rem;
+}
+
+@mixin gradient-border($gradient-color){
+    content: '';
+    background: $gradient-color;
+    height: 3px;
+    width: 30%;
+}
+
+@mixin theme-color($isLightTheme: false){
+    @if($isLightTheme){
+        background-color: $light-bg-color;
+        color: $light-text-color;
+
+        .text {
+            color: $light-text-color-secondary;
+        }
+
+        .btn{
+            @include btn($light-gradient);
+        }
+
+        h2::after{
+            @include gradient-border($light-gradient);
+        }
+
+        .gradient-bg{
+            background: $light-gradient;
+        }
+
+        .card{
+            color: $light-text-color;
+            background-color: $light-bg-color-secondary;
+        }
+
+        .hover{
+            &:hover{
+                background: $light-gradient;
+            }
+        }
+
+    }
+    @else{
+        background-color: $dark-bg-color;
+        color: $dark-text-color;
+
+        .text {
+            color: $dark-text-color-secondary;
+        }
+
+        .btn{
+            @include btn($dark-gradient);
+        }
+
+        h2::after{
+            @include gradient-border($dark-gradient);
+        }
+
+        .gradient-bg {
+            background: $dark-gradient;
+        }
+
+        .card{
+            color: $dark-text-color;
+            background-color: $dark-bg-color-secondary;
+        }
+
+        .hover{
+            &:hover{
+                background: $dark-gradient;
+            }
+        }
+    }
+}
+
+@mixin theme-body($isLightTheme: false){
+    @if $isLightTheme{
+        background-color: $light-body-bg-color;
+        .switch-btn{
+            border: 2px solid $light-bg-color;
+            .theme-icon{
+                transform: translateX(-24px);
+                color: $light-text-color;
+                background-color: $light-bg-color;
+            }
+        }
+
+    }
+    @else{
+        background-color: $dark-body-bg-color;
+        .switch-btn{
+            border: 2px solid $dark-200;
+            .theme-icon{
+                background-color: $dark-200;
+                color: $gray-200;
+        }
+    }
+    }
+}
